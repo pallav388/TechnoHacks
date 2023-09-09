@@ -1,0 +1,41 @@
+import java.util.*;
+public class Number_Guessing_Game {
+    public static void main(String[] args) {
+        int secretNumber = 1 + (int)(100 * Math.random());
+        Scanner sc = new Scanner(System.in);
+        int K = 3;
+        int i, guess=0;
+
+        System.out.println(
+                "CHOOSE A NUMBER"
+                        + " BETWEEN 1 TO 100."
+                        + "GUESS THE NUMBER "
+                        + "WITHIN 3 TRIALS.");
+
+        System.out.println("GUESS THE NUMBER :");
+        for (i=0; i < K ; i++)
+        {
+            guess = sc.nextInt();
+
+            if (guess == secretNumber)
+                System.out.println("YOUR GUESS IS CORRECT, CONGRATULATIONS!");
+
+            else if (guess < secretNumber)
+                System.out.println("YOUR GUESS IS SMALLER THAN THE SECRET NUMBER."+ guess);
+
+            else if (guess > secretNumber)
+                System.out.println("YOUR GUESS IS GREATER THAN THE SECRET NUMBER."+ guess);
+
+        }
+        if (i == K) {
+            System.out.println(
+                    "YOU HAVE EXHAUSTED"
+                            + " K TRIALS.");
+
+            System.out.println(
+                    "The number was " + secretNumber);
+        }
+
+    }
+
+}
