@@ -1,0 +1,112 @@
+import java.util.*;
+public class Rock_Paper_Scissors {
+    public static void main(String[] args) {
+        System.out.println("Choose Number corresponding to your Choice  [ROCK{0}, PAPER{1} or SCISSOR{2}] : ");
+        Scanner sc = new Scanner (System.in);
+
+        int computer_choice;
+        int game=1;
+        int you_won=0;
+        int computer_won=0;
+
+        while(game <=3) {
+            Random rand = new Random();
+            computer_choice = rand.nextInt(2);
+            int your_choice = sc.nextInt();
+            switch (your_choice) {
+                case 0:
+                    System.out.println("You Chose ROCK");
+                    break;
+                case 1:
+                    System.out.println("You Chose PAPER");
+                    break;
+                case 3:
+                    System.out.println("You Chose SCISSOR");
+            }
+            switch (computer_choice) {
+                case 0:
+                    System.out.println("Computer Chose ROCK");
+                    break;
+                case 1:
+                    System.out.println("Computer Chose PAPER");
+                    break;
+                case 3:
+                    System.out.println("Computer Chose SCISSOR");
+            }
+
+            if (your_choice == computer_choice)
+            {
+                System.out.println("Match Tied");
+
+            }
+
+            else if (your_choice == 1 && computer_choice == 0)
+
+            {
+                System.out.println("Yeh! You Won ");
+                you_won++;
+            }
+
+            else if (your_choice == 2 && computer_choice == 0)
+            {
+                System.out.println("Ohh No; You Lose");
+                computer_won++;
+            }
+
+            else if (your_choice == 0 && computer_choice == 1)
+            {
+                System.out.println("Ohh No; You Lose");
+                computer_won++;
+            }
+
+            else if (your_choice == 0 && computer_choice == 2)
+            {
+                System.out.println("Yeh! You Won ");
+                you_won++;
+            }
+
+            else if (your_choice == 1 && computer_choice == 2)
+            {
+                System.out.println("Ohh No; You Lose");
+                computer_won++;
+            }
+
+            else if (your_choice == 2 && computer_choice == 1)
+            {
+                System.out.println("Yeh! You Won ");
+                you_won++;
+            }
+
+            if (game == 3)
+            {
+                break;
+            }
+            game++;
+        }
+            System.out.println("------------------------------------------");
+
+        System.out.println("computer"+" : "+ computer_won);
+        System.out.println("you"+" : "+ you_won);
+
+        System.out.println("------------------------------------------");
+
+        if (computer_won > you_won)
+        {
+            System.out.println("Computer Wins");
+        }
+
+        else if (computer_won == you_won)
+        {
+            System.out.println("Match Tied");
+        }
+
+        else
+        {
+            System.out.println("You Win");
+        }
+
+
+        }
+
+    }
+
